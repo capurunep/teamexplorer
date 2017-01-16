@@ -1,3 +1,17 @@
+
 <h1>
-  {{title}}
+  {{title}}-{{project}}
 </h1>
+<ul  class="list-group">
+<li *ngFor="let item of items | async" class="list-group-item" (mouseenter)='over($event)' (mouseleave)='offmouse($event)'>
+{{item.$key}} - {{item.$value}}
+<span style="margin-left:20px" *ngIf="showbuttons">
+  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+   <span class="glyphicon glyphicon-remove" aria-hidden="true" style="margin-left:20px"></span>
+   </span>
+  </li>
+
+  </ul>
+
+
+
